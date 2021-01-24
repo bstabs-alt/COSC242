@@ -1,0 +1,8 @@
+digraph tree {
+node [shape = Mrecord, penwidth = 2];
+"asdfg"[label="{<f0>asdfg:1|{<f1>|<f2>}}"color=red];
+"asdf"[label="{<f0>asdf:1|{<f1>|<f2>}}"color=red];
+"asdfg":f1 -> "asdf":f0;
+"sadf"[label="{<f0>sadf:2|{<f1>|<f2>}}"color=red];
+"asdfg":f2 -> "sadf":f0;
+}

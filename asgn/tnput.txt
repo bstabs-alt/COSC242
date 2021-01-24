@@ -1,0 +1,3 @@
+digraph tree {
+node [shape = Mrecord, penwidth = 2];
+}

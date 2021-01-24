@@ -1,0 +1,64 @@
+#include <stdio.h> /* for fprintf */
+#include <stdlib.h> /* for size_t, malloc, realloc, exit */
+#include <assert.h>
+#include <ctype.h>
+#include "mylib.h"
+
+/* allocates memory and gives an error,
+   if it cannot allocate.
+   @PARAM size of memory needed to be allocated.
+   @RETURN the pointer to allocated memory.
+*/
+void *emalloc(size_t s) {
+    void *result = malloc(s);
+    if(NULL == result){
+        fprintf(stderr, "memory reallocation failed.\n");
+        exit(EXIT_FAILURE);
+    }
+    return result;
+}
+
+/* reallocates memory and gives an error,
+   if it cannot reallocate.
+   @PARAM *p current memory s size of memory to be allocated.
+   @RETURN the pointer to allocated memory.
+*/
+void *erealloc(void *p, size_t s) {
+    void *result = realloc(p, s);
+    if (NULL == result) {
+        fprintf(stderr, "memory reallocation failed.\n");
+        exit(EXIT_FAILURE);
+    }
+    return result;
+}
+
+/* reads word information from a bitstream stdin or file
+   @PARAM *s string
+   @PARAM limit upper limit for input
+   @PARAM *stream output stream
+   @RETURN int ASCII value
+*/
+int getword(char*s, int limit, FILE *stream){
+    int c;
+    char *w =s;
+    assert(limit >0 && s!= NULL && stream != NULL);
+
+    while(!isalnum(c = getc(stream)) && EOF !=c);
+    if(EOF == c){
+        return EOF;
+    } else if(--limit >0){
+        *w++ = tolower(c);
+    }
+    while(--limit >0){
+        if(isalnum(c = getc(stream))){
+            *w++ = tolower(c);
+        }else if('\'' == c){
+            limit++;
+        } else{
+            break;
+        }
+    }
+    *w= '\0';
+    return w -s;
+}
+
