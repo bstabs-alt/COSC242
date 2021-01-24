@@ -1,0 +1,3 @@
+for ((i = 0; i < 30000; i++)); do
+    echo $RANDOM
+done > array.txt
