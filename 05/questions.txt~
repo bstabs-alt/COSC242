@@ -1,0 +1,10 @@
+(a) Easier to test the wordlength against null
+(b) array of an of an array of chars = each word.
+(c) needs an extra position for \n to termiante string
+(d) yes as wordlist has already been set as a pointer.
+(e) Scans upto 79 values from word as the last one is \n.
+(f) 1[][][]     [d][o][]
+    2[][][][][] [c][a][t][s][]
+    3[][][][]   [e][a][t][]
+    4[][][][][] [b][a][t][s][]
+    

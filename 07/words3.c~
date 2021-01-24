@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define WORD_LEN 80
+#define ARRAY_MAX 100
+
+void *emalloc(size_t s){
+    void *r = malloc(s);
+    if(NULL == r){
+        exit(EXIT_FAILURE);
+    }
+    return r;
+}
+
+void print_average(){}
+
+int main(void){
+    int i, count = 0;
+    char word[WORD_LEN];
+    char *list[ARRAY_MAX];
+    double average = 0.0;
+
+    while(count < WORD_LEN){
+
+        count++;
+    }
+
+return EXIT_SUCCESS
+}

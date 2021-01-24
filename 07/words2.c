@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define ARRAY_LEN 80
+#define ARRAY_MAX 100
+
+void *emalloc(size_t s){
+    void *r = malloc(s);
+    if(NULL == r){
+        fprintf(stderr, "Memory Allocation Error!\n");
+            exit(EXIT_FAILURE);
+    }
+    return r;
+}
+
+void average_print(char **a,double n, int c){
+    if(c > 0){
+        if(strlen(a[0]) > n){
+            fprintf(stderr, "%s\n", a[0]);
+        }
+        average_print(a+1,n,c-1);
+    }
+
+}
+
+int main(void){
+    int i, count = 0;
+    char word[ARRAY_LEN];
+    char *list[ARRAY_MAX];
+    double average = 0.0;
+
+    while(count < ARRAY_LEN && 1 == scanf("%79s",word)){
+        list[count] = emalloc((strlen(word)+1) * sizeof list[0][0]);
+        strcpy(list[count], word);
+        count++;
+    }
+
+    for(i = 0; i < count; i++){
+        average += strlen(list[i]);
+    }
+
+    if(count != 0){
+        average = average/count;
+        average_print(list,average,count);
+        fprintf(stderr, "%.2f\n", average);
+    }
+
+    for(i=0; i < count; i++){
+        free(list[i]);
+    }
+    return EXIT_SUCCESS;
+}

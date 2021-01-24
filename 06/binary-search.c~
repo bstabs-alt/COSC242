@@ -1,0 +1,16 @@
+binary_search(int a[], int first, int last, int c){
+    int m;
+    if(n == 0){
+        return 0;
+    } else if(last >= first){
+        m = first + (last - first)/2;
+        if(a[m] == c){
+            return 1;
+        } else if(a[m] > c){
+            return binary_search(a, first, m-1, c);
+        } else {
+            return binary_search(a, m+1, last, c);
+        }
+    }
+    return 0;
+}

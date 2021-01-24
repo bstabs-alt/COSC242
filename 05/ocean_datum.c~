@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+#deine OCEAN_MAX 41981
+
+struct ocean_datum {
+    int x;
+    int y;
+    double conc;
+};
+
+void print_ocean_datum{
+    printf("%d %d %.4f\n", o->x, o->y, o->conc);
+}
+int read_ocean_datum{
+    return 3 == scanf("%d %d %lg", &o->x, &o->y, &o->conc);
+}
+
+int compare_ocean_datudatum(struct ocean_datum *x, struct ocean_datum *y){
+    if(){
+    }else{
+        
+    }else{
+        
+    }
+}
+
+void insertion_sort(int *a, int n){
+    int i, j, k;
+    for(i = 1; i<n; i++){
+        k = a[i];
+        j=i-1;
+        while(j>=0 && a[j] > k){
+            a[j+1] = a[j];
+            j--;
+        }
+        a[j+1]=k;
+    }
+}
+
+int main(void){
+    struct ocean_datum ocean_data[OCEAN_MAX];
+    int num_items = 0;
+    int i;
+
+    while(num_items < OCEAN_MAX && read_ocean_datum(&ocean_datum[num_items])){
+        num_items++;
+    }
+
+    insertion_sort(ocean_data, num_items);
+    
+    for(i = 0; i < num_items; i++){
+        print_ocean_datum(&ocean_data[i]);
+    }
+    
+    return EXIT_SUCCESS;
+}
