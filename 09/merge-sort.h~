@@ -1,0 +1,7 @@
+#ifndef merge_sort
+#define merge_sort
+
+extern void merge(int *a, int *w, int n);
+extern void merge_sort(int *a, int *w, int n);
+
+#endif
