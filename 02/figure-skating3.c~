@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 10
+
+int main(void){
+    int n = 0;
+    double a = 0, b = 0, c = 0;
+    float judge1[SIZE];
+    float judge2[SIZE];
+    float judge3[SIZE];
+    int i = 0;
+    
+    while(4 == scanf("%d%lg%lg%lg", &n, &a, &b, &c)){    
+        scanf("%lg%lg%lg", &a, &b, &c);
+            judge1[i] = a;
+            judge2[i] = b;
+            judge3[i] = c;
+            printf("%f\t%f\t%f\n", judge1[i], judge2[i], judge3[i]);
+            i++;
+    }
+    return EXIT_SUCCESS;
+}

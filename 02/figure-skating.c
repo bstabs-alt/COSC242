@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+    double s1, s2, s3;
+
+    scanf("%lg%lg%1g", &s1, &s2, &s3);
+    if(s1 < s2 || s3){
+        printf("%f", ((s2 + s3) / 2));
+        return EXIT_SUCCESS;
+    } else if(s2 < s1 || s3){
+        printf("%f", ((s1 + s3) / 2));
+        return EXIT_SUCCESS;
+    } else {
+        printf("%f", ((s1 + s2) / 2));
+        return EXIT_SUCCESS;
+    } 
+    return EXIT_FAILURE;
+}
